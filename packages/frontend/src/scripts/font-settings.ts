@@ -77,7 +77,7 @@ export function getDefaultFontSettings() {
 		miLocalStorage.setItem('defaultFontFace', newFontId);
 		document.documentElement.classList.add(`default-font-${newFontId}`);
 
-		if (fontFace.value !== 'system-ui') {
+		if (['misskey-biz', 'roboto', 'arial', 'times', 'sharkey-default', 'system-ui'].includes(fontFace.value)) {
 			await loadFontStyle(fontFace.value);
 		}
 		console.log(newFontId);
